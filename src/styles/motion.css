@@ -1,0 +1,124 @@
+/**
+ * Слой анимаций: появление при скролле, «вылет» текста, ховер-эффекты,
+ * переходы между страницами. Всё выключается при prefers-reduced-motion.
+ */
+
+/* --- появление блока при попадании во вьюпорт (директива v-reveal) --- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 34px), 0) scale(var(--reveal-scale, 1));
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out),
+    filter var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  filter: blur(var(--reveal-blur, 6px));
+  will-change: opacity, transform;
+}
+[data-reveal='left'] { --reveal-x: -46px; --reveal-y: 0; }
+[data-reveal='right'] { --reveal-x: 46px; --reveal-y: 0; }
+[data-reveal='scale'] { --reveal-scale: 0.92; --reveal-y: 18px; }
+[data-reveal='mask'] { --reveal-y: 0; --reveal-blur: 0px; clip-path: inset(0 100% 0 0); transition-property: opacity, transform, clip-path; }
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* --- «вылетающий» текст по словам (компонент AnimatedText) --- */
+.a-text { display: inline; }
+.a-text__word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.a-text__inner {
+  display: inline-block;
+  transform: translate3d(0, 110%, 0) rotate(6deg);
+  opacity: 0;
+  transition:
+    transform 0.85s var(--ease-out),
+    opacity 0.6s var(--ease-out);
+  transition-delay: var(--word-delay, 0ms);
+}
+.a-text.is-revealed .a-text__inner {
+  transform: translate3d(0, 0, 0) rotate(0);
+  opacity: 1;
+}
+
+/* --- бегущая цифра (composable useCountUp) --- */
+.count-up { font-variant-numeric: tabular-nums; }
+
+/* --- переходы между страницами --- */
+.page-enter-active { transition: opacity 0.5s var(--ease-out), transform 0.6s var(--ease-out); }
+.page-leave-active { transition: opacity 0.28s var(--ease-in-out), transform 0.28s var(--ease-in-out); }
+.page-enter-from { opacity: 0; transform: translate3d(0, 26px, 0); }
+.page-leave-to { opacity: 0; transform: translate3d(0, -14px, 0); }
+
+/* --- общий ховер-приём: «заливка» кнопки слева направо --- */
+.sweep { position: relative; overflow: hidden; isolation: isolate; }
+.sweep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--sweep-color, var(--red-deep));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.sweep:hover::before,
+.sweep:focus-visible::before { transform: scaleX(1); }
+
+/* --- «печать» звёзд и мелкие акценты --- */
+@keyframes stamp-in {
+  0% { transform: scale(1.6) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(0.94) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -220% 0; }
+  100% { background-position: 220% 0; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.float-soft { animation: float-soft 7s var(--ease-in-out) infinite; }
+
+/* скелет загрузки в фирменных цветах */
+.skeleton {
+  background: linear-gradient(
+    100deg,
+    var(--paper-2) 30%,
+    oklch(97% 0.014 75) 50%,
+    var(--paper-2) 70%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* --- уважение к настройкам доступности --- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; filter: none; clip-path: none; }
+  .a-text__inner { opacity: 1; transform: none; }
+}

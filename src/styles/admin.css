@@ -1,0 +1,150 @@
+/**
+ * Оформление админки: та же палитра и типографика, что на сайте,
+ * но плотнее и строже — это рабочий инструмент, а не витрина.
+ */
+
+.admin {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 264px 1fr;
+  background: var(--paper-2);
+}
+
+.admin__aside {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.admin__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.admin__brand img { width: 38px; height: 38px; }
+
+.admin__nav { display: flex; flex-direction: column; gap: 4px; }
+.admin__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(97% 0.014 75 / 0.66);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+.admin__link:hover { background: oklch(97% 0.014 75 / 0.08); color: var(--cream); transform: translateX(4px); }
+.admin__link.router-link-active { background: var(--red); color: var(--cream); }
+
+.admin__foot { margin-top: auto; font-size: 12px; color: oklch(97% 0.014 75 / 0.45); }
+
+.admin__main { padding: 34px 38px 60px; min-width: 0; }
+
+.admin__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.admin__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.admin__subtitle { margin-top: 6px; font-size: 13.5px; color: var(--ink-soft); }
+
+.admin-card {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 3px;
+  padding: 22px 24px;
+  transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+.admin-card:hover { border-color: oklch(14% 0.02 40 / 0.3); box-shadow: var(--shadow-soft); }
+
+.admin-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.admin-tab {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.admin-tab:hover { border-color: var(--red); color: var(--red); }
+.admin-tab.is-on { background: var(--red); border-color: var(--red); color: var(--cream); }
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+.admin-badge--pending { background: oklch(78% 0.135 85 / 0.28); color: var(--gold-deep); }
+.admin-badge--approved { background: oklch(54% 0.22 27 / 0.14); color: var(--red); }
+.admin-badge--rejected { background: oklch(14% 0.02 40 / 0.1); color: var(--ink-soft); }
+
+.admin-empty {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+  border: 1.5px dashed var(--line);
+  border-radius: 3px;
+}
+
+.admin-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 2px;
+  padding: 10px 12px;
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.admin-input:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px oklch(54% 0.22 27 / 0.12);
+}
+
+@media (max-width: 900px) {
+  .admin { grid-template-columns: 1fr; }
+  .admin__aside { flex-direction: row; align-items: center; gap: 16px; overflow-x: auto; }
+  .admin__nav { flex-direction: row; }
+  .admin__foot { display: none; }
+  .admin__main { padding: 22px; }
+}

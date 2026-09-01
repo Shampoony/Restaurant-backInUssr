@@ -1,0 +1,50 @@
+/**
+ * Дизайн-токены сайта: палитра, шрифты, кривые анимаций.
+ * Цвета один в один перенесены из первой версии сайта.
+ */
+:root {
+  /* --- палитра --- */
+  --paper: oklch(97% 0.014 75);
+  --paper-2: oklch(92% 0.024 68);
+  --ink: oklch(14% 0.02 40);
+  --ink-soft: oklch(14% 0.02 40 / 0.64);
+  --red: oklch(54% 0.22 27);
+  --red-cta: oklch(46% 0.225 27);
+  --red-deep: oklch(27% 0.15 24);
+  --red-vivid: oklch(46% 0.22 27);
+  --gold: oklch(78% 0.135 85);
+  --gold-deep: oklch(52% 0.125 78);
+  --cream: oklch(97% 0.014 75);
+  --line: oklch(14% 0.02 40 / 0.16);
+  --line-on-dark: oklch(97% 0.014 75 / 0.22);
+  --shadow-soft: 0 18px 40px oklch(0% 0 0 / 0.16);
+  --shadow-hard: 0 24px 60px oklch(0% 0 0 / 0.35);
+
+  /* --- шрифты --- */
+  --font-body: 'PT Sans', Arial, sans-serif;
+  --font-display: 'Oswald', Arial, sans-serif;
+  --font-mega: 'Stalinist One', system-ui, sans-serif;
+  --font-slab: 'Roboto Slab', Georgia, serif;
+  --font-script: 'Bad Script', cursive;
+  --font-flourish: 'Ruslan Display', serif;
+
+  /* --- сетка --- */
+  --page-max: 1320px;
+  --page-pad: 60px;
+  --header-h: 89px;
+
+  /* --- движение --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 220ms;
+  --dur-base: 420ms;
+  --dur-slow: 820ms;
+}
+
+@media (max-width: 1080px) {
+  :root { --page-pad: 36px; }
+}
+@media (max-width: 640px) {
+  :root { --page-pad: 22px; --header-h: 78px; }
+}

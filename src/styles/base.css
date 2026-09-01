@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* при открытой модалке / мобильном меню страница не скроллится */
+body.is-locked { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--red);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--red-deep); }
+
+h1, h2, h3, h4 { margin: 0; }
+p { margin: 0; }
+
+button { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--cream);
+}
+
+/* --- типографические утилиты (перенесены из первой версии) --- */
+.mega { font-family: var(--font-mega); font-weight: 400; }
+.display { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; }
+.slab { font-family: var(--font-slab); font-weight: 700; }
+.script { font-family: var(--font-script); }
+.flourish { font-family: var(--font-flourish); }
+.star { color: var(--gold-deep); font-size: 14px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* --- фирменная полоска-«штриховка» поверх красных блоков --- */
+.hatched { position: relative; overflow: hidden; }
+.hatched::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, oklch(97% 0.014 75 / 0.035) 0 2px, transparent 2px 26px);
+  pointer-events: none;
+}
+.hatched > * { position: relative; z-index: 1; }
+
+/* --- красивый скроллбар в духе сайта --- */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--paper-2); }
+  ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--red-deep); }
+}

@@ -1,0 +1,950 @@
+[
+  {
+    "id": "cold-appetizers",
+    "title": {
+      "ru": "Холодные закуски",
+      "en": "Cold Appetizers"
+    },
+    "order": 0,
+    "dishes": [
+      {
+        "id": "cold-appetizers-01",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Домашнее мясное ассорти с горчицей и хреном",
+          "en": "Homemade meat platter with mustard & horseradish"
+        },
+        "price": 265,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-02",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Блинное ассорти с чёрной и красной икрой",
+          "en": "Pancake assortment with black & red caviar"
+        },
+        "price": 290,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-03",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Паштет из куриной печени с вишнёвым желе",
+          "en": "Chicken liver pâté with cherry jelly"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-04",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Икра из печёных баклажанов с тёплым тостом",
+          "en": "Roasted eggplant caviar with warm toast"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-05",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Рулетики из баклажанов с сыром и грецким орехом",
+          "en": "Eggplant rolls with cheese & walnuts"
+        },
+        "price": 69,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-06",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Фермерское сало трёх видов с чесноком и хлебом",
+          "en": "Farm-style lard, three kinds, garlic & bread"
+        },
+        "price": 95,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-07",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Домашние соления с ароматным маслом",
+          "en": "Homemade pickles with fragrant oil"
+        },
+        "price": 75,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "cold-appetizers-08",
+        "categoryId": "cold-appetizers",
+        "name": {
+          "ru": "Сельдь «Олимпийская» с картофелем и свёклой",
+          "en": "“Olympic” herring with potatoes & beetroot"
+        },
+        "price": 75,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "beer-snacks",
+    "title": {
+      "ru": "Закуски к пиву",
+      "en": "Beer Snacks"
+    },
+    "order": 1,
+    "dishes": [
+      {
+        "id": "beer-snacks-01",
+        "categoryId": "beer-snacks",
+        "name": {
+          "ru": "Хрустящие чесночные гренки",
+          "en": "Crispy garlic croutons"
+        },
+        "price": 25,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "beer-snacks-02",
+        "categoryId": "beer-snacks",
+        "name": {
+          "ru": "Вяленая рыба",
+          "en": "Dried fish"
+        },
+        "price": 35,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "beer-snacks-03",
+        "categoryId": "beer-snacks",
+        "name": {
+          "ru": "Анчоусы фри с хрустящей корочкой",
+          "en": "Crispy fried anchovies"
+        },
+        "price": 35,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "salads",
+    "title": {
+      "ru": "Салаты",
+      "en": "Salads"
+    },
+    "order": 2,
+    "dishes": [
+      {
+        "id": "salads-01",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Салат с говяжьим языком и горчичной заправкой",
+          "en": "Beef tongue salad, mustard dressing"
+        },
+        "price": 129,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-02",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Салат «Шопский» со свежими овощами и брынзой",
+          "en": "Shopska salad with fresh veg & feta"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-03",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Сельдь под шубой по классике",
+          "en": "Classic herring under a fur coat"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-04",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Салат «Витаминный» из свежих овощей",
+          "en": "“Vitamin” salad of fresh vegetables"
+        },
+        "price": 27,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-05",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Деревенский салат с телятиной и сухариками",
+          "en": "Country salad with veal & croutons"
+        },
+        "price": 95,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-06",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Цезарь с курицей гриль и крутонами",
+          "en": "Caesar with grilled chicken & croutons"
+        },
+        "price": 89,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "salads-07",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Оливье по-царски с красной икрой",
+          "en": "Olivier “Tsar’s style” with red caviar"
+        },
+        "price": 99,
+        "photoUrl": null,
+        "featured": true,
+        "hidden": false
+      },
+      {
+        "id": "salads-08",
+        "categoryId": "salads",
+        "name": {
+          "ru": "Салат из свёклы, моркови и сельдерея",
+          "en": "Beetroot, carrot & celery salad"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "dumplings-and-dough",
+    "title": {
+      "ru": "Блюда из теста",
+      "en": "Dumplings & Dough"
+    },
+    "order": 3,
+    "dishes": [
+      {
+        "id": "dumplings-and-dough-01",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Пельмени сибирские с мясным бульоном",
+          "en": "Siberian dumplings in meat broth"
+        },
+        "price": 59,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "dumplings-and-dough-02",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Вареники с картофелем и шкварками",
+          "en": "Vareniki with potato & cracklings"
+        },
+        "price": 59,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "dumplings-and-dough-03",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Вареники с творогом и сметаной",
+          "en": "Vareniki with cottage cheese & sour cream"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "dumplings-and-dough-04",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Вареники с вишней и сладким соусом",
+          "en": "Vareniki with cherries & sweet sauce"
+        },
+        "price": 59,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "dumplings-and-dough-05",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Вареники с квашеной капустой и луком",
+          "en": "Vareniki with sauerkraut & onion"
+        },
+        "price": 59,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "dumplings-and-dough-06",
+        "categoryId": "dumplings-and-dough",
+        "name": {
+          "ru": "Сочные хинкали с мясным соком",
+          "en": "Juicy khinkali with meat broth"
+        },
+        "price": 60,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "hot-appetizers",
+    "title": {
+      "ru": "Горячие закуски",
+      "en": "Hot Appetizers"
+    },
+    "order": 4,
+    "dishes": [
+      {
+        "id": "hot-appetizers-01",
+        "categoryId": "hot-appetizers",
+        "name": {
+          "ru": "Чебурек с тягучим сыром",
+          "en": "Chebureki with melted cheese"
+        },
+        "price": 40,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "hot-appetizers-02",
+        "categoryId": "hot-appetizers",
+        "name": {
+          "ru": "Чебурек с сочной мясной начинкой",
+          "en": "Chebureki with juicy meat filling"
+        },
+        "price": 40,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "hot-appetizers-03",
+        "categoryId": "hot-appetizers",
+        "name": {
+          "ru": "Жульен из курицы и грибов",
+          "en": "Chicken & mushroom julienne"
+        },
+        "price": 47,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "hot-appetizers-04",
+        "categoryId": "hot-appetizers",
+        "name": {
+          "ru": "Пельмени жареные до румяной корочки",
+          "en": "Pan-fried dumplings, golden crust"
+        },
+        "price": 39,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "hot-appetizers-05",
+        "categoryId": "hot-appetizers",
+        "name": {
+          "ru": "Блины-мешочек с курицей и грибами",
+          "en": "Pancake pouches, chicken & mushrooms"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "soups",
+    "title": {
+      "ru": "Первые блюда",
+      "en": "Soups"
+    },
+    "order": 5,
+    "dishes": [
+      {
+        "id": "soups-01",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Украинский борщ с пампушкой",
+          "en": "Ukrainian borscht with garlic buns"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "soups-02",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Панский борщ с салом и хлебом",
+          "en": "“Lordly” borscht with lard & bread"
+        },
+        "price": 69,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "soups-03",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Солянка сборная мясная",
+          "en": "Mixed meat solyanka"
+        },
+        "price": 79,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "soups-04",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Крем-суп из шампиньонов со сливками",
+          "en": "Cream of mushroom soup"
+        },
+        "price": 49,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "soups-05",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Зама молдавская с домашней лапшой",
+          "en": "Moldovan zama with homemade noodles"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "soups-06",
+        "categoryId": "soups",
+        "name": {
+          "ru": "Уха из осетра и лосося с овощами",
+          "en": "Sturgeon & salmon ukha with vegetables"
+        },
+        "price": 75,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "local-specialties",
+    "title": {
+      "ru": "Локальные специалитеты",
+      "en": "Local Specialties"
+    },
+    "order": 6,
+    "dishes": [
+      {
+        "id": "local-specialties-01",
+        "categoryId": "local-specialties",
+        "name": {
+          "ru": "Осётр в сливочно-икорном соусе",
+          "en": "Sturgeon in creamy caviar sauce"
+        },
+        "price": 175,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "local-specialties-02",
+        "categoryId": "local-specialties",
+        "name": {
+          "ru": "Шашлык из осетра с соусом айоли",
+          "en": "Sturgeon skewers with aioli"
+        },
+        "price": 145,
+        "photoUrl": null,
+        "featured": true,
+        "hidden": false
+      },
+      {
+        "id": "local-specialties-03",
+        "categoryId": "local-specialties",
+        "name": {
+          "ru": "Огурчики по-тираспольски с пюре",
+          "en": "Tiraspol-style braised cucumbers, mash"
+        },
+        "price": 135,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "main-courses",
+    "title": {
+      "ru": "Горячие блюда",
+      "en": "Main Courses"
+    },
+    "order": 7,
+    "dishes": [
+      {
+        "id": "main-courses-01",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Цыплёнок «Тапака» ½ тушки",
+          "en": "Chicken tabaka, half bird"
+        },
+        "price": 125,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-02",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Жаркое из свинины в горшочке",
+          "en": "Pork stew in a clay pot"
+        },
+        "price": 89,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-03",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Лаваш с печёными овощами и сыром",
+          "en": "Lavash with roasted vegetables & cheese"
+        },
+        "price": 90,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-04",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Драники с томлёной телятиной",
+          "en": "Potato pancakes with braised veal"
+        },
+        "price": 90,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-05",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Котлета по-киевски",
+          "en": "Chicken Kiev"
+        },
+        "price": 120,
+        "photoUrl": null,
+        "featured": true,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-06",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Котлета из трёх видов мяса",
+          "en": "Cutlet of three meats"
+        },
+        "price": 115,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-07",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Мамалыга с токаной и брынзой",
+          "en": "Mamaliga with tocană & feta"
+        },
+        "price": 120,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-08",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Мясо по-французски под сырной корочкой",
+          "en": "“French-style” meat, cheese crust"
+        },
+        "price": 115,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "main-courses-09",
+        "categoryId": "main-courses",
+        "name": {
+          "ru": "Бефстроганов из говядины с пюре",
+          "en": "Beef stroganoff with mashed potatoes"
+        },
+        "price": 135,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "grilled-dishes",
+    "title": {
+      "ru": "Блюда на гриле",
+      "en": "Grilled Dishes"
+    },
+    "order": 8,
+    "dishes": [
+      {
+        "id": "grilled-dishes-01",
+        "categoryId": "grilled-dishes",
+        "name": {
+          "ru": "Шашлык из телятины с луком",
+          "en": "Veal skewers with onion"
+        },
+        "price": 89,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "grilled-dishes-02",
+        "categoryId": "grilled-dishes",
+        "name": {
+          "ru": "Шашлык из свинины с луком",
+          "en": "Pork skewers with onion"
+        },
+        "price": 77,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "grilled-dishes-03",
+        "categoryId": "grilled-dishes",
+        "name": {
+          "ru": "Шашлык из куриного бедра",
+          "en": "Chicken thigh skewers"
+        },
+        "price": 69,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "grilled-dishes-04",
+        "categoryId": "grilled-dishes",
+        "name": {
+          "ru": "Стейк из свиной шеи на углях",
+          "en": "Charcoal-grilled pork neck steak"
+        },
+        "price": 140,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "grilled-dishes-05",
+        "categoryId": "grilled-dishes",
+        "name": {
+          "ru": "Говяжий язык на гриле",
+          "en": "Grilled beef tongue"
+        },
+        "price": 150,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "side-dishes",
+    "title": {
+      "ru": "Гарниры",
+      "en": "Side Dishes"
+    },
+    "order": 9,
+    "dishes": [
+      {
+        "id": "side-dishes-01",
+        "categoryId": "side-dishes",
+        "name": {
+          "ru": "Овощи гриль с ароматом базилика",
+          "en": "Grilled vegetables with basil"
+        },
+        "price": 75,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "side-dishes-02",
+        "categoryId": "side-dishes",
+        "name": {
+          "ru": "Картофель фри",
+          "en": "French fries"
+        },
+        "price": 39,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "side-dishes-03",
+        "categoryId": "side-dishes",
+        "name": {
+          "ru": "Картофельное пюре",
+          "en": "Mashed potatoes"
+        },
+        "price": 30,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "side-dishes-04",
+        "categoryId": "side-dishes",
+        "name": {
+          "ru": "Рис с овощами",
+          "en": "Rice with vegetables"
+        },
+        "price": 30,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "side-dishes-05",
+        "categoryId": "side-dishes",
+        "name": {
+          "ru": "Гречка с жареным луком",
+          "en": "Buckwheat with fried onion"
+        },
+        "price": 30,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": {
+      "ru": "Десерты",
+      "en": "Desserts"
+    },
+    "order": 10,
+    "dishes": [
+      {
+        "id": "desserts-01",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Классический Наполеон",
+          "en": "Classic Napoleon cake"
+        },
+        "price": 45,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-02",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Медовик с вишней",
+          "en": "Honey cake with cherries"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": true,
+        "hidden": false
+      },
+      {
+        "id": "desserts-03",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Блинчики с вишней и сливками",
+          "en": "Crêpes with cherries & cream"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-04",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Блинчики с творогом и изюмом",
+          "en": "Crêpes with cottage cheese & raisins"
+        },
+        "price": 55,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-05",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Блинчики с томлёным маком",
+          "en": "Crêpes with stewed poppy seed"
+        },
+        "price": 45,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-06",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Штрудель с вишней",
+          "en": "Cherry strudel"
+        },
+        "price": 49,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-07",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Вафельная трубочка со сгущёнкой",
+          "en": "Wafer roll with condensed milk"
+        },
+        "price": 15,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-08",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Чернослив с грецким орехом",
+          "en": "Prunes with walnuts"
+        },
+        "price": 45,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "desserts-09",
+        "categoryId": "desserts",
+        "name": {
+          "ru": "Шоколадная колбаса с орехами",
+          "en": "Chocolate salami with nuts"
+        },
+        "price": 39,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  },
+  {
+    "id": "breakfast",
+    "title": {
+      "ru": "Завтраки",
+      "en": "Breakfast"
+    },
+    "order": 11,
+    "dishes": [
+      {
+        "id": "breakfast-01",
+        "categoryId": "breakfast",
+        "name": {
+          "ru": "Омлет с колбасой и сыром",
+          "en": "Omelet with sausage & cheese"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      },
+      {
+        "id": "breakfast-02",
+        "categoryId": "breakfast",
+        "name": {
+          "ru": "Сырники со сметаной",
+          "en": "Syrniki with sour cream"
+        },
+        "price": 65,
+        "photoUrl": null,
+        "featured": false,
+        "hidden": false
+      }
+    ]
+  }
+]
