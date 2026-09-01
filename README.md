@@ -11,9 +11,8 @@ npm install
 npm run dev
 ```
 
-- сайт — http://localhost:5173
-- API — http://localhost:3001/api
-- админка — http://localhost:5173/admin (логин `admin`, пароль `sssr1959`)
+Видео с сайтом - https://drive.google.com/file/d/14TIZrGoPoaZ2Lb5V44VNTZAZL_ksplq0/view?usp=sharing
+
 
 Логин, пароль и порт меняются в `.env` (шаблон — `.env.example`).
 
