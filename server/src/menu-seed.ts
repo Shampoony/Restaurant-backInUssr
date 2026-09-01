@@ -1,4 +1,11 @@
-[
+import type { MenuCategory } from '../../shared/types.js'
+
+/**
+ * Стартовое меню — 12 разделов и 69 блюд, перенесённых из первой версии сайта.
+ * Лежит модулем, а не JSON-файлом: так оно попадает в бандл serverless-функции,
+ * где читать файлы с диска нельзя.
+ */
+export const menuSeed: MenuCategory[] = [
   {
     "id": "cold-appetizers",
     "title": {
