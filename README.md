@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Сам сайт - [https://drive.google.com/file/d/14TIZrGoPoaZ2Lb5V44VNTZAZL_ksplq0/view?usp=sharing](https://back-in-ussr.netlify.app/)
+Сам сайт - https://back-in-ussr.netlify.app/
 
 
 Логин, пароль и порт меняются в `.env` (шаблон — `.env.example`).
