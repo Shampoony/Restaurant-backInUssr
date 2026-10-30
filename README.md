@@ -1,138 +1,136 @@
-# Снова в СССР — сайт ресторана
+# Back in the USSR — Restaurant Website
 
-Vue 3 + TypeScript + Vite на фронте, Express + TypeScript на бэке.
-Дизайн, шрифты и палитра полностью перенесены из первой (статичной) версии сайта,
-которая сохранена в папке `legacy/` для сверки.
+Vue 3 + TypeScript + Vite on the frontend, with Express + TypeScript on the backend.
 
-## Запуск
+The design, fonts and colour palette were carried over from the original static version of the website, which is preserved in the `legacy/` directory for reference.
+
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Сам сайт - https://back-in-ussr.netlify.app/
+Website: [back-in-ussr.netlify.app](https://back-in-ussr.netlify.app/)
 
+The administrator login, password and port can be configured in `.env`. A template is provided in `.env.example`.
 
-Логин, пароль и порт меняются в `.env` (шаблон — `.env.example`).
-
-Остальные команды:
+Other commands:
 
 ```bash
-npm run build      # сборка фронтенда в dist/ (с проверкой типов)
-npm run typecheck  # только проверка типов
-npm run start:api  # только API, без Vite
+npm run build      # Build the frontend into dist/, including type checking
+npm run typecheck  # Run type checking only
+npm run start:api  # Start the API only, without Vite
 ```
 
-## Деплой на Netlify (бесплатно)
+## Deploying to Netlify
 
-Бэкенд едет туда же, где лежит сайт: `netlify.toml` уже настроен, весь REST API
-поднимается одной serverless-функцией, данные лежат в Netlify Blobs.
-Отдельный сервер и второй аккаунт не нужны.
+The backend is deployed alongside the website. The configuration in `netlify.toml` runs the entire REST API through a single serverless function and stores data in Netlify Blobs.
 
-1. **Соберите проект локально хотя бы раз** — `npm run build`, чтобы убедиться, что сборка проходит.
-2. **Залейте репозиторий на Netlify** (Add new site → Import an existing project).
-   Настройки build подхватятся из `netlify.toml`:
-   команда `npm run build`, папка `dist`, функции `netlify/functions`.
-3. **Задайте переменные окружения**: Site configuration → Environment variables →
-   Add a variable:
+No separate server or second account is required.
 
-   | Переменная       | Значение                                     |
-   | ---------------- | -------------------------------------------- |
-   | `ADMIN_LOGIN`    | логин администратора                          |
-   | `ADMIN_PASSWORD` | пароль администратора                         |
-   | `ADMIN_SECRET`   | длинная случайная строка (ключ подписи токенов) |
+1. **Build the project locally at least once** using `npm run build` to confirm that the build succeeds.
+2. **Import the repository into Netlify** through Add new site → Import an existing project. Build settings are read from `netlify.toml`:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Functions directory: `netlify/functions`
+3. **Set the environment variables** under Site configuration → Environment variables → Add a variable:
 
-   Без `ADMIN_SECRET` сайт тоже работает — подпись выводится из логина и пароля,
-   но при их смене все выданные токены разом станут недействительными.
-4. **Передеплойте сайт** (Deploys → Trigger deploy → Clear cache and deploy site),
-   чтобы функция подхватила переменные.
-5. **Проверьте**: `https://<ваш-сайт>.netlify.app/api/health` должен ответить
-   `{"status":"ok","storage":"blobs",…}`.
+   | Variable | Value |
+   | --- | --- |
+   | `ADMIN_LOGIN` | Administrator username |
+   | `ADMIN_PASSWORD` | Administrator password |
+   | `ADMIN_SECRET` | A long random string used as the token-signing key |
 
-Хранилище Blobs создаётся само при первом запросе и заполняется стартовыми данными
-(меню из 69 блюд, три отзыва, плейсхолдеры контактов). Отзывы, брони и правки из
-админки сохраняются в нём и переживают передеплой.
+   The website also works without `ADMIN_SECRET`. In that case, the signing key is derived from the username and password. Changing either credential invalidates all previously issued tokens.
 
-Локально всё то же самое можно прогнать целиком, вместе с функцией:
+4. **Redeploy the website** through Deploys → Trigger deploy → Clear cache and deploy site so that the function picks up the environment variables.
+5. **Check the health endpoint:** `https://<your-site>.netlify.app/api/health` should return a response containing:
+
+   ```json
+   {"status":"ok","storage":"blobs"}
+   ```
+
+The Blobs store is created automatically on the first request and populated with initial data: a menu containing 69 dishes, three reviews and placeholder contact details. Reviews, reservations and changes made through the admin panel are persisted and survive redeployment.
+
+To run the complete setup locally, including the serverless function:
 
 ```bash
 npx netlify dev
 ```
 
-Лимиты бесплатного тарифа: 125 000 вызовов функций и 100 часов их работы в месяц,
-плюс Blobs — для сайта ресторана с большим запасом.
+The original deployment notes list free-plan allowances of 125,000 function invocations and 100 function execution hours per month, plus Blobs storage, and describe these as sufficient for the restaurant website. Current plan limits should be checked before deployment.
 
-### Если сайт уже был выложен раньше
+### If the Website Was Previously Deployed
 
-Дело было в двух вещах, и обе теперь закрыты `netlify.toml`:
-запросы к `/api/...` некуда было идти (бэкенда на Netlify не существовало),
-а страницы `/menu`, `/about`, `/admin` отдавали 404 при перезагрузке,
-потому что не было SPA-редиректа на `index.html`.
+Two deployment issues are now addressed in `netlify.toml`:
 
-## Структура
+- Requests to `/api/...` previously had no backend to handle them on Netlify.
+- Reloading `/menu`, `/about` or `/admin` returned a 404 because an SPA redirect to `index.html` was missing.
 
-```
-netlify.toml           деплой: статика + функция API + SPA-редиректы
-netlify/functions/     serverless-обёртка вокруг того же Express-приложения
-shared/types.ts        общие типы фронтенда и API — единственный источник правды
+## Project Structure
+
+```text
+netlify.toml           Deployment: static assets, API function and SPA redirects
+netlify/functions/     Serverless wrapper around the same Express application
+shared/types.ts        Shared frontend and API types — a single source of truth
 server/
-  src/app.ts           приложение Express (общее для локали и Netlify)
-  src/index.ts         локальный сервер
-  src/routes/          эндпоинты: menu, reviews, reservations, contacts, auth
-  src/db.ts            хранилище: JSON-файл локально, Netlify Blobs в проде
-  src/auth.ts          авторизация: токен, подписанный HMAC
-  src/validation.ts    валидация форм, ошибки возвращаются по полям
-  src/menu-seed.ts     12 разделов и 69 блюд, вынутых из старого menu.html
+  src/app.ts           Express application shared by local and Netlify environments
+  src/index.ts         Local server
+  src/routes/          Endpoints: menu, reviews, reservations, contacts and auth
+  src/db.ts            Storage: local JSON file or Netlify Blobs in production
+  src/auth.ts          Authentication using an HMAC-signed token
+  src/validation.ts    Form validation with field-specific errors
+  src/menu-seed.ts     12 categories and 69 dishes extracted from the old menu.html
 src/
-  api/                 весь HTTP-обмен: client.ts + описание эндпоинтов
-  stores/              pinia: язык, авторизация, контакты, уведомления
-  composables/         useAsyncData, useMediaQuery, useBodyLock
-  directives/          v-reveal, v-tilt, v-parallax — анимации
-  components/          ui/, layout/, home/, menu/, reviews/, booking/
-  views/               страницы сайта и админки
-  locales/             словари RU/EN (ключи проверяются типами)
-  styles/              токены, база, каркас, слой анимаций, стили админки
+  api/                 All HTTP communication: client.ts and endpoint definitions
+  stores/              Pinia stores: language, authentication, contacts and notifications
+  composables/         useAsyncData, useMediaQuery and useBodyLock
+  directives/          Animation directives: v-reveal, v-tilt and v-parallax
+  components/          ui/, layout/, home/, menu/, reviews/ and booking/
+  views/               Website and admin pages
+  locales/             RU/EN dictionaries with type-checked keys
+  styles/              Design tokens, base styles, layout, animations and admin styles
 ```
 
 ## API
 
-Публичное:
+### Public Endpoints
 
-| Метод | Путь                 | Назначение                          |
-| ----- | -------------------- | ----------------------------------- |
-| GET   | `/api/menu`          | разделы меню с блюдами              |
-| GET   | `/api/menu/featured` | подборка блюд для главной           |
-| GET   | `/api/reviews`       | одобренные отзывы                   |
-| POST  | `/api/reviews`       | отзыв от гостя → на модерацию       |
-| POST  | `/api/reservations`  | бронь столика                       |
-| GET   | `/api/contacts`      | адрес, телефон, часы работы         |
-| POST  | `/api/auth/login`    | вход в админку                      |
+| Method | Path | Purpose |
+| --- | --- | --- |
+| GET | `/api/menu` | Menu categories and dishes |
+| GET | `/api/menu/featured` | Featured dishes for the homepage |
+| GET | `/api/reviews` | Approved reviews |
+| POST | `/api/reviews` | Submit a guest review for moderation |
+| POST | `/api/reservations` | Submit a table reservation |
+| GET | `/api/contacts` | Address, telephone number and opening hours |
+| POST | `/api/auth/login` | Sign in to the admin panel |
 
-Админское (нужен заголовок `Authorization: Bearer <token>`):
-`GET/PATCH /api/admin/menu`, `GET/PATCH/DELETE /api/admin/reviews`,
-`GET/PATCH /api/admin/reservations`, `PUT /api/admin/contacts`.
+### Admin Endpoints
 
-## Что уже готово к настоящему бэкенду
+These endpoints require an `Authorization: Bearer <token>` header:
 
-- фронтенд ходит только через `src/api` — при переезде на другой сервер меняется один модуль;
-- хранилище спрятано за интерфейсом `StorageDriver` в `server/src/db.ts`: сейчас драйверов
-  два (файл и Netlify Blobs), для PostgreSQL/MongoDB пишется третий с теми же `read`/`write`;
-- приложение Express собирается в `server/src/app.ts` и не знает, кто его запускает, —
-  локальный сервер, функция Netlify или любой другой хостинг;
-- авторизация в `server/src/auth.ts` уже без состояния (токен, подписанный HMAC),
-  поэтому переезд на настоящий JWT с ролями трогает только этот модуль;
-- бронирование столика уже отправляется в API и складывается в базу — осталось
-  добавить подтверждение и экран броней в админке (эндпоинты для него уже есть).
+- `GET/PATCH /api/admin/menu`
+- `GET/PATCH/DELETE /api/admin/reviews`
+- `GET/PATCH /api/admin/reservations`
+- `PUT /api/admin/contacts`
 
-## Анимации
+## Backend Architecture and Extension Points
 
-- `v-reveal` — появление блока при прокрутке (варианты `:left`, `:right`, `:scale`, `:mask`, задержка для каскада);
-- `AnimatedText` — заголовок выезжает по словам из-под маски;
-- `CountUp` — цифры фактов отсчитываются, когда попадают на экран;
-- `v-tilt` — объёмный наклон карточек и фотографий за курсором;
-- `v-parallax` — водяной знак «1959» едет медленнее страницы;
-- ховеры: заливка кнопок слева направо, подчёркивание навигации, подъём карточек блюд,
-  оживающие заглушки фотографий, вращение иконок соцсетей;
-- переходы между страницами, каруселью отзывов и разделами меню;
-- всё отключается при системной настройке «уменьшить движение» (`prefers-reduced-motion`).
+- The frontend communicates exclusively through `src/api`. Moving to a different server requires changes in a single module.
+- Storage is abstracted behind the `StorageDriver` interface in `server/src/db.ts`. Two drivers are currently available: file storage and Netlify Blobs. PostgreSQL or MongoDB support can be added through a third driver implementing the same `read` and `write` methods.
+- The Express application is assembled in `server/src/app.ts` independently of how it is launched: by the local server, a Netlify function or another hosting environment.
+- Authentication in `server/src/auth.ts` is already stateless and uses an HMAC-signed token. Migrating to JWT-based authentication with roles would be confined to this module.
+- Table reservations are already submitted to the API and saved in storage. Reservation confirmation and an admin reservation-management screen remain to be added; the required endpoints already exist.
+
+## Animations
+
+- `v-reveal` — Reveals sections as they enter the viewport, with `:left`, `:right`, `:scale` and `:mask` variants and staggered delays.
+- `AnimatedText` — Reveals headings word by word from behind a mask.
+- `CountUp` — Animates numerical facts when they enter the viewport.
+- `v-tilt` — Applies a cursor-following 3D tilt effect to cards and photographs.
+- `v-parallax` — Moves the “1959” watermark more slowly than the page.
+- Hover effects — Left-to-right button fills, navigation underlines, raised dish cards, animated photo placeholders and rotating social media icons.
+- Transitions — Page transitions and transitions between review carousel slides and menu categories.
+- Reduced motion — All animations are disabled when the system’s `prefers-reduced-motion` setting is enabled.
